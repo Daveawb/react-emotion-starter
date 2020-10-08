@@ -1,0 +1,6 @@
+# demo
+/build
+/.crcf
+
+# production
+/dist
