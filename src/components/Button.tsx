@@ -1,17 +1,34 @@
 import styled from '@emotion/styled';
-import { border, BorderProps, flexbox } from 'styled-system';
+import { border, BorderProps } from 'styled-system';
 
 export type ButtonProps = {
-  border: boolean;
+  border?: boolean;
 };
 
-export type StyledSystemButtonProps = BorderProps;
+export type StyledSystemButtonProps = ButtonProps & BorderProps;
 
 // Super simple button
-export const Button = styled('button')<ButtonProps>(({ border = false }) => ({
-  borderStyle: 'solid',
-  borderColor: border ? 'red' : 'transparent',
-  borderWidth: 1,
-}));
+export const Button = styled('button')<ButtonProps>(
+  {
+    border: '2px solid transparent',
+    background: 'none',
+    margin: 2,
+    padding: 6,
+    borderRadius: 6,
+    cursor: 'pointer',
+    '&:focus,&:active': {
+      outline: 'none',
+    },
+    '&:hover': {
+      backgroundColor: '#dadada',
+    },
+  },
+  ({ border = false }) =>
+    border
+      ? {
+          borderColor: 'red',
+        }
+      : {},
+);
 
-export const StyledSystemButton = styled('button')<StyledSystemButtonProps>(border);
+export const StyledSystemButton = styled(Button)<StyledSystemButtonProps>(border);

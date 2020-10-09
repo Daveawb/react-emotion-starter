@@ -1,6 +1,6 @@
 module.exports = {
   parser: '@typescript-eslint/parser', // Specifies the ESLint parser
-  extends: ['plugin:testcafe/recommended', 'plugin:react/recommended', 'plugin:prettier/recommended'],
+  extends: ['plugin:react/recommended', 'plugin:prettier/recommended'],
   env: {
     browser: true,
     node: true,
@@ -43,7 +43,6 @@ module.exports = {
       version: 'detect', // Tells eslint-plugin-react to automatically detect the version of React to use
     },
   },
-  plugins: ['testcafe'],
   rules: {
     // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
     // e.g. "@typescript-eslint/explicit-function-return-type": "off",
